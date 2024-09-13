@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        img {
+            width: 250px;
+            /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 37px;
+            box-shadow: 5px 5px 10px #a69fab;
+            cursor: pointer;
+        }
+
+        /* button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #652f85;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #652f85;
+        } */
+
+        p {
+            font-size: 12px;
+            color: rgb(48, 48, 48);
+        }
+    </style>
+
+</head>
+
+<body>
+    <img id="image" src="imgs\dice1.png" alt="DICE IMAGE"><BR><BR>
+    <!-- <button id="rollButton">Roll</button> -->
+    <p>Click on image to roll</p>
+    <script>
+        const images = [
+            'imgs/dice1.png',
+            'imgs/dice2.png',
+            'imgs/dice3.png',
+            'imgs/dice4.png',
+            'imgs/dice5.png',
+            'imgs/dice6.png',
+        ];
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
+        }
+
+        // Event listener for the button
+        document.getElementById('image').onclick = function () {
+            const imgElement = document.getElementById('image');
+            imgElement.src = getRandomImage();
+        };
+    </script>
+</body>
+
+</html>
